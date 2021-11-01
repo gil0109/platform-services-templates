@@ -17,10 +17,7 @@ spec:
               containerPort: 9091
               protocol: TCP
           imagePullPolicy: IfNotPresent
-          image: image-registry.openshift-image-registry.svc:5000/openshift/oauth-proxy
-          volumeMounts:
-            - name: secret-grafana-k8s-proxy
-              mountPath: /etc/proxy/secrets
+          image: image-registry.openshift-image-registry.svc:5000/openshift/oauth-proxy:v4.4
           args:
             - '--provider=openshift'
             - '--pass-basic-auth=false'
